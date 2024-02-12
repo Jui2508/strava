@@ -3,14 +3,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-class ChallengeFirstPage extends StatefulWidget {
-  const ChallengeFirstPage({super.key});
+class ChallengeSecondPage extends StatefulWidget {
+  const ChallengeSecondPage({super.key});
 
   @override
-  State<ChallengeFirstPage> createState() => _ChallengeFirstPageState();
+  State<ChallengeSecondPage> createState() => _ChallengeSecondPageState();
 }
 
-class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
+class _ChallengeSecondPageState extends State<ChallengeSecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,9 +24,9 @@ class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
               children: [
                Container(
                 height:190,width:600,
-              //  color: Colors.amber,
-                child: Image.asset("assets/images/pumaback.png",fit: BoxFit.cover,),
-              ),Positioned(left:50,right:50,top:140,child:Image.asset("assets/images/puma.png",height:100,width:100,))
+                //color: Colors.amber,
+                child: Image.asset("assets/images/speedomaim.webp",fit: BoxFit.cover,),
+              ),Positioned(left:50,right:50,top:140,child:Image.asset("assets/images/speedo.png",height:100,width:100,))
             ]),
           ),
           Padding(
@@ -34,10 +34,10 @@ class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
             child: Container(
               child: Column(
                 children: [
-                  Text("PUMA Forever. Faster. 25k",style: TextStyle(fontSize:23,fontWeight: FontWeight.w600,  decoration: TextDecoration.none),),
+                  Text("SPEEDO: CALL YOURSELF A",style: TextStyle(fontSize:23,fontWeight: FontWeight.w600,  decoration: TextDecoration.none),),
                Padding(
                  padding: const EdgeInsets.only(top:4.0),
-                 child: Text("Challenge",style: TextStyle(fontSize:23,fontWeight: FontWeight.w600,  decoration: TextDecoration.none),),
+                 child: Text("SWIMMER",style: TextStyle(fontSize:23,fontWeight: FontWeight.w600,  decoration: TextDecoration.none),),
                ),
                Padding(
                  padding: const EdgeInsets.only(top:5.0),

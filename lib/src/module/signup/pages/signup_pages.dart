@@ -1,15 +1,20 @@
 import "package:flutter/material.dart";
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:strava_clone/src/database/note_database.dart' as db;
 
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
+import 'package:isar/isar.dart';
+
+import '../../../database/note.dart';
+import '../../../database/note_database.dart';
 
 
 //import 'package:note_database'
 //import 'package:strava_setting/src/database/note_database.dart';
 FocusNode FocusNodeFirstName = new FocusNode();
 FocusNode FocusNodePassword = new FocusNode();
-TextEditingController usernamec=TextEditingController();
+//TextEditingController usernamec=TextEditingController();
 //import 'package:stravaapplication/routes.dart';
 //https://media.istockphoto.com/id/1262293243/photo/d.jpg?s=612x612&w=0&k=20&c=HfhtRWYeR49mVmALB1zCzgOhY3YZ9ndnRnIb02CpvB8=
 class MySignUp extends StatefulWidget {
@@ -20,9 +25,17 @@ class MySignUp extends StatefulWidget {
 }
 
 class _MySignUpState extends State<MySignUp> {
- 
+   @override
+  void initState(){
+    super.initState();
+    //readNotes();
+  }
   @override
   Widget build(BuildContext context) {
+    
+    //  final noteDatabase=context.watch<NoteDatabase>();
+    // List <Note> currentNotes=noteDatabase.currentNotes;
+    // return ChangeNotifierProvider<NoteDatabase>
     return Scaffold(
       body: 
       Container(
@@ -180,7 +193,7 @@ class _MySignUpState extends State<MySignUp> {
                                 Padding(
                                       padding: const EdgeInsets.all(8.0),
                                       child: TextField(
-                                        controller: usernamec,
+                                        controller: namec,
                                         style: TextStyle(color: Colors.white),
                                         decoration: InputDecoration(
                                           fillColor: Colors.white,
@@ -232,9 +245,12 @@ class _MySignUpState extends State<MySignUp> {
                                           padding:  EdgeInsets.all(8.0),
                                           child: SizedBox(width:500,
                                             child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.orange.shade900), onPressed: (){
-                                     
-     
+                                             // addNote(namec.text);
+                                              //createNote();
+                                              //NoteDatabase.addNote();
+                                              context.read<NoteDatabase>().addNote(namec.text);
                                              Navigator.pushNamed(context,'/detail');
+                                            
                                             }, child: Text("Sign Up")),
                                           ),
                                         ),
@@ -245,8 +261,9 @@ class _MySignUpState extends State<MySignUp> {
                                               child: Text("Already Member ?",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Color.fromARGB(255, 246, 242, 231)),),
                                             ),
                                            TextButton(onPressed: (){
-                                            
+                                            context.read<NoteDatabase>().fetchNote();
                                             Navigator.pushNamed(context,'/note');
+                                          
                                            }, child: Text("Login",style: TextStyle(decoration: TextDecoration.underline, color: Colors.blue.shade100,fontSize: 16),))
                                           ],
                                         )
@@ -289,4 +306,13 @@ class _MySignUpState extends State<MySignUp> {
      
  
 // }
+// Future<void>addNote(String textFromUser) async{
+//   final newNote=Note()..text=textFromUser;
+//   await isar.writeTxn(() async{ await isar.notes.put(newNote);});
+//  // fetchNote();
+// }
+//     void readNotes(){
+//     context.read<NoteDatabase>().fetchNote();
+//   } 
+// }}
 }

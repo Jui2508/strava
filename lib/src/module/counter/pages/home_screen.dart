@@ -291,7 +291,60 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                    ) ),
                               ),
-                                 InkWell(onTap: (){
+                                
+                               InkWell(onTap: (){
+                                Navigator.pushNamed(context,'/challengesecond');
+                              },
+                                child: Container(
+                                  height: 180,width:320,
+                                  child:Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(12,12,0,0),
+                                    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("More than 144000 atheletes have already joined",style: TextStyle(fontSize: 12,color: Colors.grey.shade700),),
+                                     Padding(
+                                       padding: const EdgeInsets.fromLTRB(0,0,12,0),
+                                       child: Divider(thickness: 0.3,color: Colors.grey.shade400,),
+                              
+                                     ),
+                                     Row(
+                                       children: [
+                                         Padding(
+                                           padding: const EdgeInsets.fromLTRB(0,10,15,0),
+                                           child: Container(
+                                            child: Image.asset("assets/images/speedo.png",height:47,width:47,),
+                                           ),
+                                         ),
+                                         Container(
+                                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text("SPEEDO:CALL YOURSELF A SWIMMER",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey.shade800,fontSize: 13),),
+                                           const Padding(
+                                              padding: const EdgeInsets.only(top:3.0),
+                                              child: Text("Spend 120 minutes in the water for shot...",style: TextStyle(fontSize: 12.5),),
+                                            )
+                                            ],
+                                          ),
+                                         )
+                                       ],
+                                     ),
+                                    Padding(
+                                       padding: const EdgeInsets.only(left:64.0),
+                                       child: Container(
+                                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(3),color: Colors.grey.shade800),
+                                        height:17,width:45,
+                                        //color: Colors.grey.shade600,
+                                        child:Align(alignment: Alignment.center, child: Text("Reward",style: TextStyle(color: Colors.white,fontSize: 11,fontWeight: FontWeight.w500),))
+                                       ),
+                                     ),
+                                     ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(290, 20), backgroundColor: Color.fromARGB(255, 228, 33, 16)), onPressed: (){}, child:Text("Join"))
+                                      ],
+                                    ),
+                                  ),
+                                   ) ),
+                              ),
+                               InkWell(onTap: (){
                                 Navigator.pushNamed(context,'/challengefirst');
                               },
                                 child: Container(
@@ -301,7 +354,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     padding: const EdgeInsets.fromLTRB(12,12,0,0),
                                     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text("More than 141000 atheletes have already joined",style: TextStyle(fontSize: 12,color: Colors.grey.shade700),),
+                                        Text("More than 777000 atheletes have already joined",style: TextStyle(fontSize: 12,color: Colors.grey.shade700),),
                                      Padding(
                                        padding: const EdgeInsets.fromLTRB(0,0,12,0),
                                        child: Divider(thickness: 0.3,color: Colors.grey.shade400,),

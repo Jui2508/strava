@@ -2,10 +2,13 @@
 
 
 
+
 import 'package:strava_clone/src/module/challenges/challengefirst/pages/challengefirst_pages.dart';
+import 'package:strava_clone/src/module/challenges/challengesecond/challenge.dart';
 
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
 import 'package:strava_clone/src/module/group/Active/pages/activepages.dart';
+import 'package:strava_clone/src/module/group/Challenges/challenge.dart';
 import 'package:strava_clone/src/module/group/Club/pages/clubpages.dart';
 import 'package:strava_clone/src/module/internet/pages/offline_page.dart';
 // import 'package:strava_clone/src/module/sign-up/sign_up.dart';
@@ -42,6 +45,7 @@ class AppRouter {
                 title: 'Home Screen', color: Colors.amberAccent),
           ),
         );
+        case '/challenge':return MaterialPageRoute(builder: (context)=>ChallengePage(title:"challenge",));
       case '/second':
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -94,6 +98,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => const SettingPage());
 //case '/routing':MaterialPageRoute(builder: (context) => const Routing)
 case '/challengefirst' :return MaterialPageRoute(builder:(context)=>ChallengeFirstPage());
+case '/challengesecond' :return MaterialPageRoute(builder: (context)=>ChallengeSecondPage());
       default:
         return null;
     }

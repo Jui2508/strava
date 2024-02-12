@@ -1,6 +1,11 @@
 import "package:flutter/material.dart";
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:strava_clone/src/database/note_database.dart';
+import 'package:strava_clone/src/module/details/pages/detail_page.dart';
+
+import '../../../database/note.dart';
 
 FocusNode FocusNodeFirstName = new FocusNode();
 FocusNode FocusNodePassword = new FocusNode();
@@ -196,11 +201,14 @@ class MyFormState extends State<LoginPage> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: TextFormField(
-                                  controller: usernamecontroller,
+                                  
+                                  controller: namec,  
+                                  //context.read<NoteDatabase>().fetchNote();
                                   validator: (String? name) {
-                                    if (name!.isEmpty) {
+                                    if (name!.isEmpty ) {
                                       return "Please Enter name";
                                     }
+                                    //else if(name!=Note.text)
 
                                     return null;
                                   },
@@ -209,7 +217,7 @@ class MyFormState extends State<LoginPage> {
                                     fillColor: Colors.white,
                                     //filled: true,
                                     border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(1)),
+                                    borderRadius: BorderRadius.circular(1)),
                                     hintText: "  Enter Username",
                                     hintStyle: TextStyle(color: Colors.white),
                                     labelText: "  Username",
@@ -227,7 +235,7 @@ class MyFormState extends State<LoginPage> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: TextFormField(
                                   validator: (String? msg) {
-                                    if (msg!.isEmpty) {
+                                    if (msg!.isEmpty ) {
                                       return "Please Enter Password";
                                     } else if (msg.length < 6) {
                                       return "Password is too short";

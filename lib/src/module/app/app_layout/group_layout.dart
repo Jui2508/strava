@@ -38,7 +38,9 @@ final Widget? bootomNavigationBar;
               }, child: Text("ACTIVE",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),)),
               Padding(
                 padding: const EdgeInsets.only(left:60),
-                child: Text("CHALLENGES",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),),
+                child: InkWell(onTap: () {
+                  Navigator.pushNamed(context,'/challenge');
+                }, child: Text("CHALLENGES",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),)),
               ),
                Padding(
                 padding: const EdgeInsets.only(left:50),

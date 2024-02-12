@@ -173,40 +173,40 @@ class _ActivePageState extends State<ActivePage> {
                                 ),
                               ),
                               Container(
-                                child: SizedBox(height:160,width: 500,
+                                child: SizedBox(height:140,width: 500,
                                   child: Card(
                                     child: Padding(
-                                      padding: const EdgeInsets.all(13.0),
+                                      padding: const EdgeInsets.all(10.0),
                                       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text("Available Challenges",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w800,color: Colors.grey.shade700),),
+                                        //  Text("Available Challenges",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w800,color: Colors.grey.shade700),),
                                           Padding(
-                                            padding: const EdgeInsets.only(top:10.0),
+                                            padding: const EdgeInsets.only(top:1.0),
                                             child: Row(
                                               children: [
-                                                Image.asset("assets/images/elevation.png",height: 60,width: 60,),
+                                                Image.asset("assets/images/speedo.png",height: 60,width: 60,),
                                                 Padding(
                                                   padding: const EdgeInsets.only(left:12.0),
                                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                       Padding(
                                                         padding: const EdgeInsets.only(top:8.0),
-                                                        child: Text("February Cycling Elevation",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
+                                                        child: Text("SPEEDO:CALL YOURSELF A",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                                                       ),
                                                 Padding(
                                                   padding: const EdgeInsets.only(top:3.0),
                                                   child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
-                                                      Text("Challenge",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
+                                                      Text("SWIMMER",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
                                                      Padding(
                                                        padding: const EdgeInsets.only(top:3.0),
-                                                       child: Column(
+                                                       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                                          children: [
                                                            Container(
                                                             child: Row(
                                                               children: [
-                                                                Icon(Icons.motorcycle_outlined,size: 17,),
-                                                                Text(" Climb a total of 7,000 m (22,965 ft) in a...",style: TextStyle(fontSize: 12),)
+                                                                Icon(Icons.waves_outlined,size: 17,),
+                                                                Text(" Complete  a 100 km(62.1 mi)ride.",style: TextStyle(fontSize: 12),)
                                                               ],
                                                             ),
                                                            ),
@@ -237,6 +237,78 @@ class _ActivePageState extends State<ActivePage> {
                                   ),
                                 ),
                               ),
+                              Container(
+                                child: SizedBox(height:160,width: 500,
+                                  child: Card(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(13.0),
+                                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                        //  Text("Available Challenges",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w800,color: Colors.grey.shade700),),
+                                          Padding(
+                                            padding: const EdgeInsets.only(top:10.0),
+                                            child: Row(
+                                              children: [
+                                                Image.asset("assets/images/100k.png",height: 60,width: 60,),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(left:12.0),
+                                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Padding(
+                                                        padding: const EdgeInsets.only(top:8.0),
+                                                        child: Text("February Gran Fondo",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
+                                                      ),
+                                                Padding(
+                                                  padding: const EdgeInsets.only(top:3.0),
+                                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
+                                                      Text("Challenge",style: TextStyle(fontSize: 19,fontWeight: FontWeight.bold),),
+                                                     Padding(
+                                                       padding: const EdgeInsets.only(top:3.0),
+                                                       child: Column(
+                                                         children: [
+                                                           Container(
+                                                            child: Row(
+                                                              children: [
+                                                                Icon(Icons.motorcycle_outlined,size: 17,),
+                                                                Text(" Complete  a 100 km(62.1 mi)ride.",style: TextStyle(fontSize: 12),)
+                                                              ],
+                                                            ),
+                                                           ),
+                                                         Padding(
+                                                           padding: const EdgeInsets.only(left:8.0),
+                                                           child: Container(width:240,  child: Padding(
+                                                             padding: const EdgeInsets.only(top:5.0),
+                                                             child: Text("Feb 1,2024 to Feb 29,2024",style: TextStyle(fontSize: 11),),
+                                                           ),),
+                                                         ),
+                                                       //  Divider(color: Colors.amber,)
+                                                     
+                                                         ],
+                                                       ),
+                                                     )
+                                                    ],
+                                                  ),
+                                                ),
+                                                    ],
+                                                  ),
+                                                )
+                                              
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(230,10,0,50),
+                                  child: InkWell(onTap: (){
+                                    Navigator.pushNamed(context,'/challenge');
+                                  }, child: Text("See All Challenges",style: TextStyle(fontSize: 12,color: Colors.red),)),
+                                )
                    ],
                  ),
                )

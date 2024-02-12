@@ -117,6 +117,17 @@ flutter:
     - assets/images/club.jpg
     - assets/images/strava_logo.jpg
     - assets/images/elevation.png
+    - assets/images/100k.png
+    - assets/images/speedo.png
+    - assets/images/speedomaim.webp
+    - assets/images/shoes.png 
+    - assets/images/cycle.png
+    - assets/images/walkshoe.png
+    - assets/images/hike.png
+    - assets/images/workout.png
+    - assets/images/ski.jpg
+    - assets/images/55knew.png
+    - assets/images/skiirmv.png
 
   #   - images/a_dot_ham.jpeg
 

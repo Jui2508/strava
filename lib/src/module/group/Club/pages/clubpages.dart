@@ -66,17 +66,43 @@ class _ClubPageState extends State<ClubPage> {
           child: Column(
             children: [
               Container(//color: Colors.white,
-             height:190,width:390,
+             height:190,width:400,
              child: Image.asset("assets/images/club.jpg",fit: BoxFit.cover,),
               ),
              Container(
               child:Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(15,18,6,0),
+                    padding: const EdgeInsets.fromLTRB(15,0,6,0),
                     child: Image.asset("assets/images/strava_logo.jpg",height:50,width:55),
                   ),
-                  Text("The Strava Club",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w700),)
+                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top:20.0),
+                        child: Text("The Strava Club",style: TextStyle(fontSize: 17,fontWeight: FontWeight.w700),),
+                      ),
+                    Padding(
+                      padding: const EdgeInsets.only(top:10.0),
+                      child: Column(
+                        children: [
+                          Container(child:Row(
+                            children: [
+                              Icon(Icons.location_on,size: 15,),
+                              Text("San Francisco, California",style: TextStyle(fontSize: 12),)
+                            ],
+                          )),
+                          Padding(
+                            padding: const EdgeInsets.only(top:8.0),
+                            child: Container(width:120, 
+                              child: Text("5,017,243 Athelete",style: TextStyle(fontSize: 12),),
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                    ],
+                  )
                 ],
               )
              )
@@ -87,7 +113,7 @@ class _ClubPageState extends State<ClubPage> {
        
           
           Padding(
-            padding: const EdgeInsets.fromLTRB(15,50,15,0),
+            padding: const EdgeInsets.fromLTRB(15,15,15,0),
             child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 247, 23, 2), fixedSize: Size(700, 40)), onPressed: (){}, child: Text("Join")),
           )  
    
