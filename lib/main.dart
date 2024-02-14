@@ -34,7 +34,7 @@ await NoteDatabase.initialize();
   //       measurementId: "${dotenv.env['FIREBASE_MEASUREMENT_ID']}",
   //     ),
   //   );
-  // }
+  //}
   
   runApp(
     ChangeNotifierProvider(create:(context) => NoteDatabase(),child: 

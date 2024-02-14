@@ -2,10 +2,13 @@ import "package:flutter/material.dart";
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:strava_clone/src/database/note_database.dart';
+
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
+import 'dart:core';
 
 import '../../../database/note.dart';
+import '../../../database/note_database.dart';
+
 
 FocusNode FocusNodeFirstName = new FocusNode();
 FocusNode FocusNodePassword = new FocusNode();
@@ -27,17 +30,18 @@ class MyFormState extends State<LoginPage> {
     if (form != null && form.validate()) {
       {
         await Future.delayed(const Duration(seconds: 1));
-        Navigator.pushNamed(context, '/home_screen');
-        // Navigator.pushNamed(context,MyRoute.homeroute);
-        //   Navigator.pushNamed(context,MyRoute.loginroute);
 
-// }
+        Navigator.pushNamed(context,'/home_screen');
       }
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final noteDatabase = context.read<NoteDatabase>();
+    List <Note> currentNotes = noteDatabase.currentNotes;
+    print("list==========================$currentNotes");
+
     return Scaffold(
       body: Form(
         key: _MyFormkey,
@@ -106,26 +110,7 @@ class MyFormState extends State<LoginPage> {
                           color: Colors.black.withOpacity(0.4),
                           height: 360,
                           width: 100,
-                          //           child: Column(
-                          //             children: [
-                          //               Container(
-                          //                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.grey.shade50),
-                          //                 child: Padding(
-                          //                   padding: const EdgeInsets.fromLTRB(0,0,0,0),
-                          //                   child:Card(
-                          //                     color: Colors.black,
-                          //                   )
-                          //                 )),
-
-                          //                 Padding(
-                          //                   padding: const EdgeInsets.all(8.0),
-                          //                   child: SizedBox(
-                          //                     height:50,
-                          //                     width: 20,
-
-                          //                       child: Container(
-                          //                         color: Colors.black.withOpacity(0.1),
-                          //                         //decoration: BoxDecoration(gradient:LinearGradient(colors: [Color.fromARGB(255, 108, 98, 98).withOpacity(0.5),Colors.grey.withOpacity(0.5)])),
+                          //decoration: BoxDecoration(gradient:LinearGradient(colors: [Color.fromARGB(255, 108, 98, 98).withOpacity(0.5),Colors.grey.withOpacity(0.5)])),
                           child: Column(
                             children: [
                               //                             // Padding(
@@ -148,7 +133,7 @@ class MyFormState extends State<LoginPage> {
                                               "assets/images/google.png"),
                                           Padding(
                                             padding: const EdgeInsets.fromLTRB(
-                                                19, 0, 0, 0),
+                                                10, 0, 0, 0),
                                             child: Text(
                                               "Log In using Google",
                                               style: TextStyle(
@@ -201,23 +186,35 @@ class MyFormState extends State<LoginPage> {
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: TextFormField(
-                                  
-                                  controller: namec,  
-                                  //context.read<NoteDatabase>().fetchNote();
+                                  controller: namec,
+                                 
                                   validator: (String? name) {
-                                    if (name!.isEmpty ) {
+                                  
+                                    dynamic error;
+                                   
+                                    if (name!.isEmpty) {
                                       return "Please Enter name";
+                                    } else {
+                                      currentNotes.forEach((element) {
+                                        if (element.text != namec.text) {
+                                          print("not same=================");
+                                          error = "Please enter valid data";
+                                        }
+                                        else {
+                                          Navigator.pushNamed(context,"/detail");
+                                        }
+                                      });
+                                      //  print(currentNotes[i]);
+                                      print(namec.text);
+                                      return error;
                                     }
-                                    //else if(name!=Note.text)
-
-                                    return null;
                                   },
                                   style: TextStyle(color: Colors.white),
                                   decoration: InputDecoration(
                                     fillColor: Colors.white,
                                     //filled: true,
                                     border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(1)),
+                                        borderRadius: BorderRadius.circular(1)),
                                     hintText: "  Enter Username",
                                     hintStyle: TextStyle(color: Colors.white),
                                     labelText: "  Username",
@@ -235,7 +232,7 @@ class MyFormState extends State<LoginPage> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: TextFormField(
                                   validator: (String? msg) {
-                                    if (msg!.isEmpty ) {
+                                    if (msg!.isEmpty) {
                                       return "Please Enter Password";
                                     } else if (msg.length < 6) {
                                       return "Password is too short";
@@ -269,6 +266,9 @@ class MyFormState extends State<LoginPage> {
                                           backgroundColor:
                                               Colors.orange.shade900),
                                       onPressed: () {
+                                        //  print(noteDatabase.currentNotes);
+                                        print(
+                                            "list==========================${currentNotes}");
                                         moveToNext(context);
                                       },
                                       child: Text("Log In")),

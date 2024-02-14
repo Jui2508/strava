@@ -41,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
       Padding(
           padding: const EdgeInsets.only(right: 20.0),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context,'/search');
+            },
             child: const Icon(Icons.search_outlined),
           )),
           Padding(

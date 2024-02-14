@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../search.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class SearchPageNew extends StatelessWidget {
+  const SearchPageNew({super.key});
 
   @override
   Widget build(BuildContext context) {

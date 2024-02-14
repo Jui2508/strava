@@ -16,9 +16,16 @@ final List<Note> currentNotes=[];
 // await isar.writeTxn(() async {
 //   await isar.users.put(newUser); // insert & update
 // });
-Future<void>addNote(String textFromUser) async{
-  final newNote=Note()..text=textFromUser;
-  await isar.writeTxn(() async{ await isar.notes.put(newNote);});
+Future<void>addNote(String textFromUser,String passFromUser) async{
+  final newNote=Note()..text=textFromUser ..password=passFromUser;
+    //final newPass=Note()..password=textFromUser;
+  await isar.writeTxn(() async{ 
+    await isar.notes.put(newNote); 
+   // isar.notes.put(newPass); 
+    }
+    
+    );
+  
   fetchNote();
 }
 Future<void>fetchNote()async{

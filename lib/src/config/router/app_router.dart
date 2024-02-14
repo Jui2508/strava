@@ -3,6 +3,8 @@
 
 
 
+import 'dart:js';
+
 import 'package:strava_clone/src/module/challenges/challengefirst/pages/challengefirst_pages.dart';
 import 'package:strava_clone/src/module/challenges/challengesecond/challenge.dart';
 
@@ -25,6 +27,7 @@ import 'package:strava_clone/src/module/profile/pages/editinfo_page.dart';
 import 'package:strava_clone/src/module/profile/pages/you_pages.dart';
 import 'package:strava_clone/src/module/welcome/pages/welcome_page.dart';
 
+import '../../module/counter/search/pages/search_page.dart';
 import '../../module/module.dart';
 import '../../module/signup/pages/signup_pages.dart';
 
@@ -46,14 +49,15 @@ class AppRouter {
           ),
         );
         case '/challenge':return MaterialPageRoute(builder: (context)=>ChallengePage(title:"challenge",));
-      case '/second':
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: _counterCubit,
-            child: const SecondScreen(
-                title: 'Second Screen', color: Colors.blueAccent),
-          ),
-        );
+      // case '/second':
+      //   return MaterialPageRoute(
+      //     builder: (_) => BlocProvider.value(
+      //       value: _counterCubit,
+      //       child: const SecondScreen(
+      //           title: 'Second Screen', color: Colors.blueAccent),
+      //     ),
+      //   );
+        case '/search':return MaterialPageRoute(builder: (context)=>SearchPage(title: 'search',));
         case '/record':return MaterialPageRoute(builder: (context)=>RecordPage());
         case '/message':return MaterialPageRoute(builder: (context)=>MessagePageNew());
         case '/editinfo':return MaterialPageRoute(builder: (context)=>editinfo_page());
@@ -82,12 +86,12 @@ class AppRouter {
         return MaterialPageRoute(builder: ((context) => const TimerPage()));
       case '/offline':
         return MaterialPageRoute(builder: ((context) => const OfflinePage()));
-      case '/search':
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider.value(
-                  value: _searchBloc,
-                  child: const SearchPage(),
-                ));
+      // case '/search':
+      //   return MaterialPageRoute(
+      //       builder: (_) => BlocProvider.value(
+      //             value: _searchBloc,
+      //             child: const SearchPage(),
+      //           ));
       case '/settings':
         return MaterialPageRoute(
             builder: (_) => BlocProvider.value(
