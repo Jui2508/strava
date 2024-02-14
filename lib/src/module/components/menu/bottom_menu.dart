@@ -1,7 +1,7 @@
 import 'package:strava_clone/src/boot.dart';
 import 'package:strava_clone/src/module/components/menu/bloc/menu_bloc.dart';
 
-List<String> bottomNavRoutes = ["/home_screen","/timer", "/record", "/challengemain","/portfolio"];
+List<String> bottomNavRoutes = ["/home_screen","/timer", "/record", "/challenge","/portfolio"];
 
 class BottomMenu extends StatelessWidget {
   const BottomMenu({Key? key}) : super(key: key);
