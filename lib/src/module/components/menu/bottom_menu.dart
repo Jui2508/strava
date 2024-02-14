@@ -1,7 +1,7 @@
 import 'package:strava_clone/src/boot.dart';
 import 'package:strava_clone/src/module/components/menu/bloc/menu_bloc.dart';
 
-List<String> bottomNavRoutes = ["/home_screen","/timer", "/record", "/active","/portfolio"];
+List<String> bottomNavRoutes = ["/home_screen","/timer", "/record", "/challengemain","/portfolio"];
 
 class BottomMenu extends StatelessWidget {
   const BottomMenu({Key? key}) : super(key: key);
@@ -43,6 +43,7 @@ class BottomMenu extends StatelessWidget {
       selectedItemColor: Color.fromARGB(255, 239, 59, 5),
       unselectedItemColor: Colors.grey,
       showUnselectedLabels: true,
+      
       onTap: (value) {
         if (state.bottomMenuSelectedIndex != value) {
           menuBloc.add(MenuSelected(

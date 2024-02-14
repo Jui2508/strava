@@ -3,10 +3,11 @@
 
 
 
-import 'dart:js';
 
 import 'package:strava_clone/src/module/challenges/challengefirst/pages/challengefirst_pages.dart';
 import 'package:strava_clone/src/module/challenges/challengesecond/challenge.dart';
+import 'package:strava_clone/src/module/counter/contact/pages/contact_page.dart';
+import 'package:strava_clone/src/module/counter/facebook/pages/facebook_page.dart';
 
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
 import 'package:strava_clone/src/module/group/Active/pages/activepages.dart';
@@ -49,14 +50,14 @@ class AppRouter {
           ),
         );
         case '/challenge':return MaterialPageRoute(builder: (context)=>ChallengePage(title:"challenge",));
-      // case '/second':
-      //   return MaterialPageRoute(
-      //     builder: (_) => BlocProvider.value(
-      //       value: _counterCubit,
-      //       child: const SecondScreen(
-      //           title: 'Second Screen', color: Colors.blueAccent),
-      //     ),
-      //   );
+      case '/second':
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider.value(
+            value: _counterCubit,
+            child: const SecondScreen(
+                title: 'Second Screen', color: Colors.blueAccent),
+          ),
+        );
         case '/search':return MaterialPageRoute(builder: (context)=>SearchPage(title: 'search',));
         case '/record':return MaterialPageRoute(builder: (context)=>RecordPage());
         case '/message':return MaterialPageRoute(builder: (context)=>MessagePageNew());
@@ -86,12 +87,13 @@ class AppRouter {
         return MaterialPageRoute(builder: ((context) => const TimerPage()));
       case '/offline':
         return MaterialPageRoute(builder: ((context) => const OfflinePage()));
-      // case '/search':
-      //   return MaterialPageRoute(
-      //       builder: (_) => BlocProvider.value(
-      //             value: _searchBloc,
-      //             child: const SearchPage(),
-      //           ));
+      case '/search':
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider.value(
+                  value: _searchBloc,
+                  child: const SearchPageNew(),
+                ));
+                case '/contact':return MaterialPageRoute(builder: (context)=>ContactPage(title: "contact"));
       case '/settings':
         return MaterialPageRoute(
             builder: (_) => BlocProvider.value(
@@ -100,6 +102,7 @@ class AppRouter {
                 ));
       case '/settings_page':
         return MaterialPageRoute(builder: (context) => const SettingPage());
+        case '/facebook':return MaterialPageRoute(builder: (context)=>FacebookPage(title: "facebook"));
 //case '/routing':MaterialPageRoute(builder: (context) => const Routing)
 case '/challengefirst' :return MaterialPageRoute(builder:(context)=>ChallengeFirstPage());
 case '/challengesecond' :return MaterialPageRoute(builder: (context)=>ChallengeSecondPage());

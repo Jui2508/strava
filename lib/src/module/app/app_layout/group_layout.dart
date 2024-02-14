@@ -39,7 +39,7 @@ final Widget? bootomNavigationBar;
               Padding(
                 padding: const EdgeInsets.only(left:60),
                 child: InkWell(onTap: () {
-                  Navigator.pushNamed(context,'/challenge');
+                  Navigator.pushNamed(context,'/challengemain');
                 }, child: Text("CHALLENGES",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),)),
               ),
                Padding(

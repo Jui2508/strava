@@ -65,316 +65,884 @@ class _ChallengePageState extends State<ChallengePage> {
       //  drawer: const AppMenu(),
       bootomNavigationBar: const BottomMenu(),
       actions: getAction(context),
-      body: SizedBox(height: 400,
-        child: Card(
+      body: SingleChildScrollView(
+        child: SizedBox(height:2000,
           child: Column(
             children: [
-              Container(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
-                    child: Row(
-                      children: [
-                        Container(
-                          //  color: Colors.amber,
-                          width: 70, height: 30,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(4),
-                              border: Border.all(color: Colors.grey.shade400)),
+              Card(
+                child: Column(
+                  children: [
+                    Container(
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(15, 15, 15, 0),
                           child: Row(
                             children: [
-                              Image.asset(
-                                "assets/images/shoes.png",
-                                height: 35,
-                                width: 35,
-                              ),
-                              Text(
-                                "Run",
-                                style: TextStyle(fontSize: 12),
-                              )
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                            //  color: Colors.amber,
-                            width: 70, height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                border: Border.all(color: Colors.grey.shade400)),
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  "assets/images/cycle.png",
-                                  height: 35,
-                                  width: 35,
-                                ),
-                                Text(
-                                  "Ride",
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                            //  color: Colors.amber,
-                            width: 70, height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                border: Border.all(color: Colors.grey.shade400)),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(7, 0, 5, 0),
-                                  child: Icon(
-                                    Icons.waves_outlined,
-                                    size: 13,
-                                  ),
-                                ),
-                                //Image.asset("assets/images/shoes.png",height:35,width:35,),
-                                Text(
-                                  "Swim",
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                            //  color: Colors.amber,
-                            width: 70, height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                border: Border.all(color: Colors.grey.shade400)),
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  "assets/images/walkshoe.png",
-                                  height: 35,
-                                  width: 35,
-                                ),
-                                Text(
-                                  "Walk",
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                            //  color: Colors.amber,
-                            width: 70, height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                border: Border.all(color: Colors.grey.shade400)),
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  "assets/images/hike.png",
-                                  height: 35,
-                                  width: 35,
-                                ),
-                                Text(
-                                  "Hike",
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                            //  color: Colors.amber,
-                            width: 90, height: 30,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(4),
-                                border: Border.all(color: Colors.grey.shade400)),
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  "assets/images/workout.png",
-                                  height: 35,
-                                  width: 35,
-                                ),
-                                Text(
-                                  "Workout",
-                                  style: TextStyle(fontSize: 12),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Container(
+                              Container(
                                 //  color: Colors.amber,
-                                width: 65,
-                                height: 30,
+                                width: 70, height: 30,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(4),
-                                    border:
-                                        Border.all(color: Colors.grey.shade400)),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    "Distance",
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ))),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                              //  color: Colors.amber,
-                              width: 100,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  border:
-                                      Border.all(color: Colors.grey.shade400)),
-                              child: Align(
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    "Elapsed Time",
-                                    style: TextStyle(fontSize: 12),
-                                  ))),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                              //  color: Colors.amber,
-                              width: 100,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  border:
-                                      Border.all(color: Colors.grey.shade400)),
-                              child: Align(
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    "Elevation Time",
-                                    style: TextStyle(fontSize: 12),
-                                  ))),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                              //  color: Colors.amber,
-                              width: 100,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  border:
-                                      Border.all(color: Colors.grey.shade400)),
-                              child: Align(
-                                  alignment: Alignment.center,
-                                  child: Text(
-                                    "Moving Time",
-                                    style: TextStyle(fontSize: 12),
-                                  ))),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15.0),
-                child: SingleChildScrollView(
-                  child: Container(
-                    height: 200,
-                    width: 700,
-                    child: Image.asset("assets/images/ski.jpg"),
-                  ),
-                ),
-              ),
-              SingleChildScrollView(
-                child: Container(
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
-                        child: Image.asset(
-                          "assets/images/55knew.png",
-                          height: 45,
-                          width: 45,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 10, 0, 0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'February Nordic Skiing Challenge',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700, fontSize: 16),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10.0),
-                              child: Container(
+                                    border: Border.all(color: Colors.grey.shade400)),
                                 child: Row(
                                   children: [
-                                    //Image.asset("assets/images/skiirmv.png",height: 50,width:50,),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              3, 0, 0, 0),
-                                          child: Text(
-                                            "Record a total of 55 km(34.2 mi) of Nordic skiing in ",
-                                            style: TextStyle(fontSize: 12),
-                                          ),
-                                        ),
-                                        Text(" a month.",
-                                            style: TextStyle(fontSize: 12)),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 12.0),
-                                          child: Text(
-                                            "  Feb 1 to Feb 29 ,2024",
-                                            style: TextStyle(fontSize: 12),
-                                          ),
-                                        )
-                                      ],
+                                    Image.asset(
+                                      "assets/images/shoes.png",
+                                      height: 35,
+                                      width: 35,
+                                    ),
+                                    Text(
+                                      "Run",
+                                      style: TextStyle(fontSize: 12),
                                     )
                                   ],
                                 ),
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                  //  color: Colors.amber,
+                                  width: 70, height: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(color: Colors.grey.shade400)),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        "assets/images/cycle.png",
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      Text(
+                                        "Ride",
+                                        style: TextStyle(fontSize: 12),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                  //  color: Colors.amber,
+                                  width: 70, height: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(color: Colors.grey.shade400)),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(7, 0, 5, 0),
+                                        child: Icon(
+                                          Icons.waves_outlined,
+                                          size: 13,
+                                        ),
+                                      ),
+                                      //Image.asset("assets/images/shoes.png",height:35,width:35,),
+                                      Text(
+                                        "Swim",
+                                        style: TextStyle(fontSize: 12),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                  //  color: Colors.amber,
+                                  width: 70, height: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(color: Colors.grey.shade400)),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        "assets/images/walkshoe.png",
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      Text(
+                                        "Walk",
+                                        style: TextStyle(fontSize: 12),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                  //  color: Colors.amber,
+                                  width: 70, height: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(color: Colors.grey.shade400)),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        "assets/images/hike.png",
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      Text(
+                                        "Hike",
+                                        style: TextStyle(fontSize: 12),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                  //  color: Colors.amber,
+                                  width: 90, height: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(color: Colors.grey.shade400)),
+                                  child: Row(
+                                    children: [
+                                      Image.asset(
+                                        "assets/images/workout.png",
+                                        height: 35,
+                                        width: 35,
+                                      ),
+                                      Text(
+                                        "Workout",
+                                        style: TextStyle(fontSize: 12),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                  padding: const EdgeInsets.only(left: 8),
+                                  child: Container(
+                                      //  color: Colors.amber,
+                                      width: 65,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(4),
+                                          border:
+                                              Border.all(color: Colors.grey.shade400)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text(
+                                          "Distance",
+                                          style: TextStyle(fontSize: 12),
+                                        ),
+                                      ))),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                    //  color: Colors.amber,
+                                    width: 100,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border:
+                                            Border.all(color: Colors.grey.shade400)),
+                                    child: Align(
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          "Elapsed Time",
+                                          style: TextStyle(fontSize: 12),
+                                        ))),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                    //  color: Colors.amber,
+                                    width: 100,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border:
+                                            Border.all(color: Colors.grey.shade400)),
+                                    child: Align(
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          "Elevation Time",
+                                          style: TextStyle(fontSize: 12),
+                                        ))),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Container(
+                                    //  color: Colors.amber,
+                                    width: 100,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(4),
+                                        border:
+                                            Border.all(color: Colors.grey.shade400)),
+                                    child: Align(
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          "Moving Time",
+                                          style: TextStyle(fontSize: 12),
+                                        ))),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: SingleChildScrollView(
+                        child: Container(
+                          height: 160,
+                          width: 700,
+                          child: Image.asset("assets/images/ski.jpg",fit: BoxFit.cover,),
+                        ),
+                      ),
+                    ),
+                    SingleChildScrollView(
+                      child: Container(
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                              child: Image.asset(
+                                "assets/images/55knew.png",
+                                height: 50,
+                                width: 45,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'February Nordic Skiing Challenge',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700, fontSize: 16),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 10.0),
+                                    child: Container(
+                                      child: Row(
+                                        children: [
+                                          //Image.asset("assets/images/skiirmv.png",height: 50,width:50,),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.fromLTRB(
+                                                    3, 0, 0, 0),
+                                                child: Text(
+                                                  "Record a total of 55 km(34.2 mi) of Nordic skiing in ",
+                                                  style: TextStyle(fontSize: 12),
+                                                ),
+                                              ),
+                                              Text(" a month.",
+                                                  style: TextStyle(fontSize: 12)),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.only(top: 12.0),
+                                                child: Text(
+                                                  " Feb 1 to Feb 29 ,2024",
+                                                  style: TextStyle(fontSize: 12),
+                                                ),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             )
                           ],
                         ),
-                      )
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10,0, 10, 0),
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Color.fromARGB(255, 228, 33, 16),
+                              fixedSize: Size(330, 30)),
+                          onPressed: () {},
+                          child: Text("Join")),
+                    ),
+                    
+                  ],
+                ),
+              ),
+              Container(height:70,width:600,
+                color: Color.fromARGB(255, 236, 231, 231),
+             //  color: Colors.amber,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15,0,15,0),
+                    child: Container(decoration: ShapeDecoration(color: Colors.grey.shade400,  shape: CircleBorder(
+                  
+                    )),
+                      height: 30,width: 30,
+                     // color: Colors.blueGrey,
+                      child: Icon(Icons.person,color: Colors.white,size:20,),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top:15.0),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Recommended For You",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 17),),
+                        Padding(
+                          padding: const EdgeInsets.only(top:1.0),
+                          child: Text("Based on your activities",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 12),),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              )
+               
+           ) ,
+           Column(
+             children: [
+               InkWell(onTap: (){
+                Navigator.pushNamed(context,'/challengefirst');
+               },
+                 child: Container( color:  Color.fromARGB(255, 236, 231, 231),
+                  //height: 700,width:360,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left:9.0),
+                    child: Row(
+                      children: [
+                        Container(height: 300,width:170,
+                          child: Card(
+                            elevation: 1,
+                            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                  child: Image.asset("assets/images/pumarmv.png",height:46,width: 46,),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("PUMA Forever.",style: TextStyle(fontWeight: FontWeight.w500),),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top:2.0),
+                                        child: Text("Faster. 25k Challen...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                                ,
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                  child: Row(
+                                    children: [
+                                      Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                       Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left:15.0),
+                                  child: Text("Run a total of 25 km in 5\nweeks\n\nFeb 12 to Mar 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                  child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container( color: Color.fromARGB(255, 236, 235, 231),
+                  //height: 700,width:360,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right:9.0),
+                    child: Row(
+                      children: [
+                        Container(height: 300,width:170,
+                          child: Card(
+                            elevation: 1,
+                            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                  child: Image.asset("assets/images/5krmv.png",height:46,width: 46,),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("February 5K x",style: TextStyle(fontWeight: FontWeight.w500),),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top:2.0),
+                                        child: Text("Brook Challenge",style: TextStyle(fontWeight: FontWeight.w500)),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                                ,
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                  child:
+                                      Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                       //Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                    
+                                  
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left:15.0),
+                                  child: Text("Complete a 5km (3.1 mi)\nrun.\n\nFeb 1 to Mar 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                  child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                 )
+                 ],
+                         ),
+                       ),
+                 ),
+               ),
+                Container( color:  Color.fromARGB(255, 236, 231, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(left:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/speedo.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("SPEEDO:CALL",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("YOURSELF A SWIM...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,5,0,0),
+                                child: Row(
+                                  children: [
+                                   Padding(
+                                     padding: const EdgeInsets.fromLTRB(0,10,8,10),
+                                     child: Icon(Icons.waves_outlined,size:17,),
+                                   ),
+                                     Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("120 minutes in water\n\nJan 29 to Feb 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,45,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container( color: Color.fromARGB(255, 236, 235, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(right:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/smrt.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("February Snowsport",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("x Smartwool Challe...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                child:
+                                    Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                     //Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  
+                                
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("Complete a 300 minutes of\nskiing,iceskating,\nsnowboarding and/or sno...\n\nFeb 2 to Feb 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,18,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 228, 33, 16),
-                        fixedSize: Size(330, 30)),
-                    onPressed: () {},
-                    child: Text("Join")),
-              ),
-              
-            ],
+               )
+               ],
           ),
         ),
-      ),
-    );
+               ),
+                Container( color:  Color.fromARGB(255, 236, 231, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(left:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/speedo.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("PUMA Forever.",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("Faster. 25k Challen...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                child: Row(
+                                  children: [
+                                    Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                     Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("Run a total of 25 km in 5\nweeks\n\nFeb 12 to Mar 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container( color: Color.fromARGB(255, 236, 235, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(right:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/5krmv.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("February 5K x",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("Brook Challenge",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                child:
+                                    Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                     //Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  
+                                
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("Complete a 5km (3.1 mi)\nrun.\n\nFeb 1 to Mar 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+               )
+               ],
+          ),
+        ),
+               ),
+                Container( color:  Color.fromARGB(255, 236, 231, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(left:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/pumarmv.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("PUMA Forever.",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("Faster. 25k Challen...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                child: Row(
+                                  children: [
+                                    Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                     Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("Run a total of 25 km in 5\nweeks\n\nFeb 12 to Mar 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container( color: Color.fromARGB(255, 236, 235, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(right:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/5krmv.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("February 5K x",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("Brook Challenge",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                child:
+                                    Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                     //Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  
+                                
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("Complete a 5km (3.1 mi)\nrun.\n\nFeb 1 to Mar 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+               )
+               ],
+          ),
+        ),
+               ),
+                Container( color:  Color.fromARGB(255, 236, 231, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(left:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/pumarmv.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("PUMA Forever.",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("Faster. 25k Challen...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                child: Row(
+                                  children: [
+                                    Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                     Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("Run a total of 25 km in 5\nweeks\n\nFeb 12 to Mar 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container( color: Color.fromARGB(255, 236, 235, 231),
+                //height: 700,width:360,
+                child: Padding(
+                  padding: const EdgeInsets.only(right:9.0),
+                  child: Row(
+                    children: [
+                      Container(height: 300,width:170,
+                        child: Card(
+                          elevation: 1,
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                child: Image.asset("assets/images/5krmv.png",height:46,width: 46,),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("February 5K x",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:2.0),
+                                      child: Text("Brook Challenge",style: TextStyle(fontWeight: FontWeight.w500)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                              ,
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                child:
+                                    Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                     //Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  
+                                
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left:15.0),
+                                child: Text("Complete a 5km (3.1 mi)\nrun.\n\nFeb 1 to Mar 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+               )
+               ],
+          ),
+        ),
+               ),
+             ],
+           )]))));
   }
 }

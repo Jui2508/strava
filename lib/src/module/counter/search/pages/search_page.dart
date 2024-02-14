@@ -34,10 +34,112 @@ class _SearchPageState extends State<SearchPage> {
  floatingActionButton: FloatingActionButton(backgroundColor: Color.fromARGB(255, 247, 23, 2), onPressed: (){},child: Icon(Icons.add));
     final textTheme = Theme.of(context).textTheme;
     return SearchLayout(
-    
+    body: Container(height:25,width:700,
+                color: Color.fromARGB(255, 219, 223, 214),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16,8,0,0),
+                  child: Text("PEOPLE YOU MAY KNOW",style: TextStyle(fontSize:9,color: Colors.grey.shade800),),
+                ),
+              )
+            
+          
        
-        body: SingleChildScrollView(
-         ));
+        // body: Column(
+        //     children: [
+        //       Padding(
+        //         padding: const EdgeInsets.fromLTRB(15,15,15,6),
+        //         child: Container(height:35,width: 600,
+        //          // color: Colors.amber,
+        //          decoration:BoxDecoration(borderRadius: BorderRadius.circular(4),color: Color.fromARGB(255, 231, 230, 225)) ,
+        //         child: Row(
+        //           children: [
+        //             Padding(
+        //               padding: const EdgeInsets.only(left:8.0),
+        //               child: Icon(Icons.search_outlined,color: Colors.grey.shade600,),
+        //             ),
+        //             Padding(
+        //               padding: const EdgeInsets.only(left:5.0),
+        //               child: Text("Search on Strava",style: TextStyle(color: Colors.grey.shade500),),
+        //             )
+        //           ],
+        //         ),
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding: const EdgeInsets.fromLTRB(0,0,0,0),
+        //         child: Divider(
+        //           color: Colors.black,thickness: 0.09,
+        //         ),
+        //       ),
+        //       Container(
+        //        height: 70,width:400,
+        //         child: Padding(
+        //           padding: const EdgeInsets.only(left:20),
+        //           child: Row(
+        //             children: [
+        //               Padding(
+        //                 padding: const EdgeInsets.all(8.0),
+        //                 child: Column(
+        //                   children: [
+        //                     Icon(Icons.person,size: 32,),
+        //                     Text("SUGGESTED",style: TextStyle(fontSize:11,fontWeight: FontWeight.w700),)
+        //                   ],
+        //                 ),
+        //               ),
+        //                 Padding(
+        //                   padding: const EdgeInsets.fromLTRB(15,7,10,0,),
+        //                   child: InkWell(onTap: () {
+                            
+        //                   },
+        //                     child: Column(
+        //                     children: [
+        //                       Image.asset("assets/images/ws2.png",height: 32,width: 32,),
+        //                       Text("FACEBOOK",style: TextStyle(fontSize:11,fontWeight: FontWeight.w700),)
+        //                     ],
+        //                                       ),
+        //                   ),
+        //                 ),
+        //               Padding(
+        //                 padding: const EdgeInsets.fromLTRB(13,8,10,0,),
+        //                 child: Column(
+        //                   children: [
+        //                   Image.asset("assets/images/add2.png",height: 23,width: 25,),
+        //                     Padding(
+        //                       padding: const EdgeInsets.only(top:7.0),
+        //                       child: Text("CONTACTS",style: TextStyle(fontSize:11,fontWeight: FontWeight.w700),),
+        //                     )
+        //                   ],
+        //                 ),
+        //               ),
+                    
+        //               Padding(
+        //                 padding: const EdgeInsets.fromLTRB(10,6,0,0),
+        //                 child: Column(
+        //                   children: [
+        //                     Image.asset("assets/images/q.png",height: 27,width: 27,),
+        //                     Padding(
+        //                       padding: const EdgeInsets.only(top:5.0),
+        //                       child: Text("QR CODE",style: TextStyle(fontSize:11,fontWeight: FontWeight.w700),),
+        //                     )
+        //                   ],
+        //                 ),
+        //               ),
+        //             ],
+        //           ),
+        //         ),
+        //       ),
+        //       Container(height:25,width:700,
+        //         color: Color.fromARGB(255, 219, 223, 214),
+        //         child: Padding(
+        //           padding: const EdgeInsets.fromLTRB(16,8,0,0),
+        //           child: Text("PEOPLE YOU MAY KNOW",style: TextStyle(fontSize:9,color: Colors.grey.shade800),),
+        //         ),
+        //       )
+        //     ],
+        //   ),
+        );
+
+         
 
   }
 }

@@ -67,6 +67,7 @@ dependencies:
   build_runner: ^2.3.3
   isar_generator: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
+  sticky_headers: ^0.3.0+2
   
  # mapbox_gl: ^0.16.0
   
@@ -128,6 +129,12 @@ flutter:
     - assets/images/ski.jpg
     - assets/images/55knew.png
     - assets/images/skiirmv.png
+    - assets/images/ws2.png
+    - assets/images/add2.png
+    - assets/images/q.png
+    - assets/images/fbnewrmv.png
+    - assets/images/cuprmv.png
+    - assets/images/smrt.png
 
   #   - images/a_dot_ham.jpeg
 
