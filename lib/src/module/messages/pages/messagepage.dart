@@ -20,11 +20,15 @@ class _MessagePageNewState extends State<MessagePageNew> {
             Text("Messages"),
             Padding(
               padding: const EdgeInsets.only(left:110.0),
-              child: Icon(Icons.edit_note_outlined,size:30,),
+              child: InkWell(onTap: () {
+                Navigator.pushNamed(context,'/createmsg');
+              }, child: Icon(Icons.edit_note_outlined,size:30,)),
             ),
             Padding(
               padding: const EdgeInsets.only(left:8),
-              child: Icon(Icons.settings_outlined),
+              child: InkWell(onTap: () {
+                Navigator.pushNamed(context,'/messaging');
+              }, child: Icon(Icons.settings_outlined)),
             )
           ],
         )),

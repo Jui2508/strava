@@ -64,7 +64,7 @@ class _YouScreenState extends State<YouScreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20,20,0,0),
-                      child: CircleAvatar(radius:30,backgroundColor: Colors.grey,child: Icon(Icons.person_2,color: Colors.grey.shade800,),),
+                      child: CircleAvatar( radius:30,backgroundColor: Colors.grey.shade300,child: Icon(Icons.person,size:45, color: Colors.white,),),
                     ),
                     Container(
                       //color: Colors.blue,
@@ -101,16 +101,16 @@ class _YouScreenState extends State<YouScreen> {
             children: [
               Container(
          //color: Colors.greenAccent,
-                height:55,width:230,
+                height:55,width:220,
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20,0,50,0),
+                  padding: const EdgeInsets.fromLTRB(20,0,20,0),
                   child: Row(
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(bottom:10.0),
                         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                           children:const [
-                            Text("Following",style: TextStyle(fontSize: 12,color: Color.fromARGB(255, 250, 65, 52)),),
+                            Text("Following",style: TextStyle(fontSize: 11,color: Color.fromARGB(255, 250, 65, 52),fontWeight: FontWeight.w300),),
                             Padding(
                               padding:  EdgeInsets.only(top:8.0),
                               child: Text("0",style: TextStyle(fontSize: 16),),
@@ -128,7 +128,7 @@ class _YouScreenState extends State<YouScreen> {
                         padding: const EdgeInsets.only(bottom:10.0),
                         child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                           children:const [
-                            Text("Followers",style: TextStyle(fontSize: 12,color: Color.fromARGB(255, 250, 65, 52)),),
+                            Text("Followers",style: TextStyle(fontSize: 11,color: Color.fromARGB(255, 250, 65, 52),fontWeight: FontWeight.w300),),
                             Padding(
                               padding:  EdgeInsets.only(top:8.0),
                               child: Text("0",style: TextStyle(fontSize: 16),),
@@ -146,25 +146,42 @@ class _YouScreenState extends State<YouScreen> {
               Row(
                 children: [
                   Container(
-            height: 40,width:60,
-                    //color: Colors.blue,
-                    child:OutlinedButton( style:OutlinedButton.styleFrom(fixedSize: Size(20,20), side: BorderSide( color: Colors.red)), onPressed: () {
-                          
-                         },child: Icon(Icons.share_outlined,color: Colors.red,)),
-                        
-                  ),
+                                //  color: Colors.amber,
+                                width: 45, height: 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(4),
+                                    border: Border.all(color: Colors.red)),
+                                child: 
+                                      Icon(Icons.share_outlined,size:17,color: Colors.red,
+                                    
+                                      )),
+                              
                      Padding(
                        padding: const EdgeInsets.only(left:8.0),
-                       child: Container(
-                                 height: 40,width:60,
-                                         //color: Colors.blue,
-                                         child:OutlinedButton( style:OutlinedButton.styleFrom(fixedSize: Size(20,20), side: BorderSide( color: Colors.red)), onPressed: () {
-                            
-                           },child: InkWell(onTap: () {
-                             Navigator.pushNamed(context,'/editinfo');
-                           }, child: Icon(Icons.edit_outlined,color: Colors.red,))),
-                          
-                                       ),
+                       child:   InkWell(onTap: () {
+                         Navigator.pushNamed(context,'/editinfo');
+                       },
+                         child: Container(
+                                  //  color: Colors.amber,
+                                  width: 70, height: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(color: Colors.red)),
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.fromLTRB(9,0,4,0),
+                                        child: Icon(Icons.edit_outlined,size:17,color: Colors.red,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Edit",
+                                        style: TextStyle(fontSize: 11,color:Colors.red),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                       ),
                      ),
                 ],
               )

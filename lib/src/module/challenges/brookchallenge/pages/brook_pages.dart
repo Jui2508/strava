@@ -3,14 +3,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-class ChallengeFirstPage extends StatefulWidget {
-  const ChallengeFirstPage({super.key});
+class BrookChallenge extends StatefulWidget {
+  const BrookChallenge({super.key});
 
   @override
-  State<ChallengeFirstPage> createState() => _ChallengeFirstPageState();
+  State<BrookChallenge> createState() => _BrookChallengeState();
 }
 
-class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
+class _BrookChallengeState extends State<BrookChallenge> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +25,8 @@ class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
                Container(
                 height:190,width:600,
               //  color: Colors.amber,
-                child: Image.asset("assets/images/juinew2.png",fit: BoxFit.cover,),
-              ),Positioned(left:50,right:50,top:140,child:Image.asset("assets/images/puma.png",height:100,width:100,))
+                child: Image.asset("assets/images/runner.jpg",fit: BoxFit.cover,),
+              ),Positioned(left:50,right:50,top:140,child:Image.asset("assets/images/5krmv.png",height:100,width:100,))
             ]),
           ),
           Padding(
@@ -35,20 +35,17 @@ class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
               child: Container(
                 child: Column(
                   children: [
-                    Text("PUMA Forever. Faster. 25k",style: TextStyle(fontSize:23,fontWeight: FontWeight.w600,  decoration: TextDecoration.none),),
-                 Padding(
-                   padding: const EdgeInsets.only(top:4.0),
-                   child: Text("Challenge",style: TextStyle(fontSize:23,fontWeight: FontWeight.w600,  decoration: TextDecoration.none),),
-                 ),
+                    Text("February 5K x Brooks Challenge",style: TextStyle(fontSize:20,fontWeight: FontWeight.w700,  decoration: TextDecoration.none),),
+                 
                  Padding(
                    padding: const EdgeInsets.only(top:5.0),
                    child: Column(
                      children: [
-                       Text("Complete 25k over the next five weeks to unlock your",style: TextStyle(fontSize: 14,color: Colors.grey.shade700),),
+                       Text("From first attempts to PRs, chase your best 5k run",style: TextStyle(fontSize: 12,color: Colors.grey.shade700),),
                   // RichText(text:TextSpan(children: [TextSpan(text:"NITRO",style: TextStyle(fontSize:10)),TextSpan(text:"TM",style:TextStyle(fontFeatures:[ FontFeature.superscripts()]))]))
                     Padding(
                       padding: const EdgeInsets.only(top:4.0),
-                      child: Text("NITRO reward!",style: TextStyle(color: Colors.grey.shade700),),
+                      child: Text("Brooks.",style: TextStyle(color: Colors.grey.shade700,fontSize: 12),),
                     )
                      ],
                    ),
@@ -67,7 +64,7 @@ class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
                           Icon(Icons.calendar_today,color: Colors.grey.shade700,),
                           Padding(
                             padding: const EdgeInsets.only(left:14.0),
-                            child: Text("Feb 12, 2024 to Mar 18, 2024 -- 32 days left"),
+                            child: Text("Feb 1, 2024 to Feb 29, 2024 -- 14 days left"),
                           )
                         ],
                       ),
@@ -85,7 +82,7 @@ class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
                             padding: const EdgeInsets.only(left:5.0),
                             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Run a total of 25 km in 5 weeks",style: TextStyle(fontSize:14),),
+                                Text("RComplete a 5 km (3.1 mi) run.",style: TextStyle(fontSize:14),),
                                 Padding(
                                   padding: const EdgeInsets.only(top:4.0),
                                   child: Text("Qualifying Activities: Hike, Run, VirtualRun, Walk, Wheelchair",style: TextStyle(fontSize: 10,fontWeight: FontWeight.w300),),
@@ -113,7 +110,7 @@ class _ChallengeFirstPageState extends State<ChallengeFirstPage> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          child: Text("Reward your feet by trying our new NITRO\nfootwear lineup and earn your digital PUMA\nForever. Faster. badge !",style: TextStyle(fontSize:14),),
+                                          child: Text("Earn a digital finisher's badge for your Trophy\nCase",style: TextStyle(fontSize:14),),
                                         ),
                                        
                                       ],

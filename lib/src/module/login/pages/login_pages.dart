@@ -30,8 +30,9 @@ class MyFormState extends State<LoginPage> {
     if (form != null && form.validate()) {
       {
         await Future.delayed(const Duration(seconds: 1));
-
-        Navigator.pushNamed(context,'/home_screen');
+        //context.read<NoteDatabase>().addNote(namec.text, passc.text);
+      // Navigator.pushNamed(context,'/home_screen');
+        print("clicked");
       }
     }
   }
@@ -201,7 +202,7 @@ class MyFormState extends State<LoginPage> {
                                           error = "Please enter valid data";
                                         }
                                         else {
-                                          Navigator.pushNamed(context,"/detail");
+                                          Navigator.pushNamed(context,"/home_screen");
                                         }
                                       });
                                       //  print(currentNotes[i]);

@@ -2,13 +2,14 @@ import "package:flutter/material.dart";
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
 import 'package:isar/isar.dart';
+import 'package:strava_clone/src/module/login/login.dart';
 
 import '../../../database/note.dart';
 import '../../../database/note_database.dart';
 import 'dart:core';
+
 //import 'package:note_database'
 //import 'package:strava_setting/src/database/note_database.dart';
 FocusNode FocusNodeFirstName = new FocusNode();
@@ -32,10 +33,10 @@ class MyFormState extends State<MySignUp> {
     if (form != null && form.validate()) {
       {
         await Future.delayed(const Duration(seconds: 1));
-                                        context
-                                          .read<NoteDatabase>()
-                                          .addNote(namec.text, passc.text);
-        Navigator.pushNamed(context, '/detail');
+        context.read<NoteDatabase>().addNote(namec.text, passc.text);
+        //Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPage()));
+      Navigator.pushNamed(context,'/detail');
+       print("clicked");
       }
     }
   }
@@ -110,7 +111,7 @@ class MyFormState extends State<MySignUp> {
                     child: Container(
                         //          // decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.grey ),
                         color: Colors.black.withOpacity(0.4),
-                        height: MediaQuery.of(context).size.height*0.64,
+                        height: MediaQuery.of(context).size.height * 0.64,
                         //height: 470,
                         width: 100,
                         child: Column(
@@ -128,9 +129,9 @@ class MyFormState extends State<MySignUp> {
                                     child: Row(
                                       children: [
                                         Image.asset("assets/images/google.png"),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              19, 0, 0, 0),
+                                        const Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(19, 0, 0, 0),
                                           child: Text(
                                             "sign up using Google",
                                             style: TextStyle(
@@ -161,9 +162,9 @@ class MyFormState extends State<MySignUp> {
                                             "assets/images/facebook.png",
                                             height: 20,
                                             width: 35),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              20, 0, 0, 0),
+                                        const Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(20, 0, 0, 0),
                                           child: Text(
                                             "Sign Up using Facebook",
                                             style: TextStyle(
@@ -171,7 +172,7 @@ class MyFormState extends State<MySignUp> {
                                                 fontWeight: FontWeight.bold),
                                           ),
                                         ),
-                                        Divider(
+                                        const Divider(
                                             color: Colors.black, thickness: 3)
                                       ],
                                     ),
@@ -189,23 +190,32 @@ class MyFormState extends State<MySignUp> {
                                   }
                                   return null;
                                 },
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
-                                  focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 164, 3, 3)),),
-                                 errorBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(1), borderSide: BorderSide(color:Color.fromARGB(255, 164, 3, 3))),
-                                  errorStyle: TextStyle(color: Color.fromARGB(255, 164, 3, 3)),
+                                  focusedErrorBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Color.fromARGB(255, 164, 3, 3)),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(1),
+                                      borderSide: BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 164, 3, 3))),
+                                  errorStyle: const TextStyle(
+                                      color: Color.fromARGB(255, 164, 3, 3)),
                                   fillColor: Colors.white,
                                   //filled: true,
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(1)),
                                   hintText: "  Enter Username",
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle:
+                                      const TextStyle(color: Colors.white),
                                   labelText: "  Username",
                                   labelStyle: TextStyle(
                                       color: FocusNodeFirstName.hasFocus
                                           ? Colors.blue
                                           : Colors.grey.shade200),
-                                  focusedBorder: OutlineInputBorder(
+                                  focusedBorder: const OutlineInputBorder(
                                       borderSide:
                                           BorderSide(color: Colors.grey)),
                                 ),
@@ -216,21 +226,31 @@ class MyFormState extends State<MySignUp> {
                               child: TextField(
                                 obscureText: true,
                                 controller: passc,
-                                style: TextStyle(color: Colors.white),
-                                decoration: InputDecoration(//
-                                 focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 164, 3, 3)),),
-                                 errorBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(1), borderSide: BorderSide(color:Color.fromARGB(255, 164, 3, 3))),
-                                  errorStyle: TextStyle(color: Color.fromARGB(255, 164, 3, 3)),
+                                style: const TextStyle(color: Colors.white),
+                                decoration: InputDecoration(
+                                  //
+                                  focusedErrorBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Color.fromARGB(255, 164, 3, 3)),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(1),
+                                      borderSide: BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 164, 3, 3))),
+                                  errorStyle: const TextStyle(
+                                      color: Color.fromARGB(255, 164, 3, 3)),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(1)),
                                   hintText: "  Enter Password",
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle:
+                                      const TextStyle(color: Colors.white),
                                   labelText: "  Password",
                                   labelStyle: TextStyle(
                                       color: FocusNodePassword.hasFocus
                                           ? Colors.blue
                                           : Colors.grey.shade200),
-                                  focusedBorder: OutlineInputBorder(
+                                  focusedBorder: const OutlineInputBorder(
                                       borderSide:
                                           BorderSide(color: Colors.grey)),
                                 ),
@@ -241,26 +261,35 @@ class MyFormState extends State<MySignUp> {
                               child: TextFormField(
                                 obscureText: true,
                                 validator: (String? msg) {
-                                  if (msg!= passc.text) {
+                                  if (msg != passc.text) {
                                     return "Password is not same as above";
                                   }
                                   return null;
                                 },
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
-                                   focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 164, 3, 3)),),
-                                 errorBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(1), borderSide: BorderSide(color:Color.fromARGB(255, 164, 3, 3))),
-                                  errorStyle: TextStyle(color: Color.fromARGB(255, 164, 3, 3)),
+                                  focusedErrorBorder: const OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: Color.fromARGB(255, 164, 3, 3)),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(1),
+                                      borderSide: BorderSide(
+                                          color:
+                                              Color.fromARGB(255, 164, 3, 3))),
+                                  errorStyle: const TextStyle(
+                                      color: Color.fromARGB(255, 164, 3, 3)),
                                   border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(1)),
                                   hintText: "  Confirm Password",
-                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintStyle:
+                                      const TextStyle(color: Colors.white),
                                   labelText: " Confirm Password",
                                   labelStyle: TextStyle(
                                       color: FocusNodeFirstName.hasFocus
                                           ? Colors.blue
                                           : Colors.grey.shade200),
-                                  focusedBorder: OutlineInputBorder(
+                                  focusedBorder: const OutlineInputBorder(
                                       borderSide:
                                           BorderSide(color: Colors.grey)),
                                 ),
@@ -268,7 +297,7 @@ class MyFormState extends State<MySignUp> {
                             ),
 
                             Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: SizedBox(
                                 width: 500,
                                 child: ElevatedButton(
@@ -276,20 +305,19 @@ class MyFormState extends State<MySignUp> {
                                         backgroundColor:
                                             Colors.orange.shade900),
                                     onPressed: () {
-                                      // addNote(namec.text);
+                                     // addNote(namec.text);
                                       //createNote();
                                       //NoteDatabase.addNote();
-                                     
+                         
                                       moveToNext(context);
-                                     
                                     },
-                                    child: Text("Sign Up")),
+                                    child: const Text("Sign Up")),
                               ),
                             ),
                             Row(
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 35.0),
+                                const Padding(
+                                  padding: EdgeInsets.only(left: 35.0),
                                   child: Text(
                                     "Already Member ?",
                                     style: TextStyle(
@@ -302,7 +330,7 @@ class MyFormState extends State<MySignUp> {
                                 TextButton(
                                     onPressed: () {
                                       context.read<NoteDatabase>().fetchNote();
-                                      Navigator.pushNamed(context, '/note');
+                                      Navigator.pushNamed(context,'/login');
                                     },
                                     child: Text(
                                       "Login",

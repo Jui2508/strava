@@ -4,6 +4,7 @@
 
 
 
+import 'package:strava_clone/src/module/challenges/brookchallenge/pages/brook_pages.dart';
 import 'package:strava_clone/src/module/challenges/challengefirst/pages/challengefirst_pages.dart';
 import 'package:strava_clone/src/module/challenges/challengesecond/challenge.dart';
 import 'package:strava_clone/src/module/counter/contact/pages/contact_page.dart';
@@ -18,6 +19,8 @@ import 'package:strava_clone/src/module/internet/pages/offline_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:strava_clone/src/module/login/pages/login_pages.dart';
+import 'package:strava_clone/src/module/messages/createmessage/pages/createmsg_page.dart';
+import 'package:strava_clone/src/module/messages/messaging/pages/messaging_page.dart';
 import 'package:strava_clone/src/module/messages/pages/messagepage.dart';
 import 'package:strava_clone/src/module/portfolio/portfolio.dart';
 import 'package:strava_clone/src/module/record/pages/record_pages.dart';
@@ -40,7 +43,7 @@ class AppRouter {
   Route? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
      case '/':return MaterialPageRoute(builder: ((context)=>MySignUp()));
-     case '/login':return MaterialPageRoute(builder: (context)=>LoginPage());
+ case '/login':return MaterialPageRoute(builder: (context)=>LoginPage());
       case '/home_screen':
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -73,13 +76,16 @@ class AppRouter {
                     color: Colors.deepPurpleAccent,
                   ),
                 ));
+                 case '/brook':return MaterialPageRoute(builder: (context)=>BrookChallenge());
                 case '/detail':return MaterialPageRoute(builder: (context)=>DetailPage());
                 case '/welcome':return MaterialPageRoute(builder: (context)=>WelcomePage());
+                case '/createmsg':return MaterialPageRoute(builder: (context)=>CreateMessage());
+                case '/messaging' :return MaterialPageRoute(builder: (context)=>MessagingPage());
       // case '/sign-in':
       //   return MaterialPageRoute(builder: ((context) => const SignInPage()));
       // case '/sign-up':
       //   return MaterialPageRoute(builder: ((context) => const SignUpPage()));
-      case '/note':return MaterialPageRoute(builder: (context)=>LoginPage());
+      //case '/note':return MaterialPageRoute(builder: (context)=>LoginPage());
       case '/active':return MaterialPageRoute(builder: (context)=>ActivePage(title: "active"));
         case '/club':return MaterialPageRoute(builder: (context)=>ClubPage(title: "club"));
       case '/settingPage': return MaterialPageRoute(builder: (context)=>SettingPage());

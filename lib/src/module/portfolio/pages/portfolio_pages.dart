@@ -34,7 +34,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
             onTap: () {
               Navigator.pushNamed(context,'/you');
             },
-            child: const CircleAvatar(radius:14,backgroundColor:Colors.grey,)
+            child: const CircleAvatar(child: Icon(Icons.person,size:18,color: Colors.white,), radius:12,backgroundColor:Colors.grey,)
           )),
           Padding(
           padding: const EdgeInsets.only(right: 20.0),

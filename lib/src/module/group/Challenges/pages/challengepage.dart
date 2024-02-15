@@ -39,7 +39,9 @@ class _ChallengePageState extends State<ChallengePage> {
       Padding(
           padding: const EdgeInsets.only(right: 20.0),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context,'/search');
+            },
             child: const Icon(Icons.search_outlined),
           )),
       Padding(
@@ -337,12 +339,12 @@ class _ChallengePageState extends State<ChallengePage> {
                                                 padding: const EdgeInsets.fromLTRB(
                                                     3, 0, 0, 0),
                                                 child: Text(
-                                                  "Record a total of 55 km(34.2 mi) of Nordic skiing in ",
-                                                  style: TextStyle(fontSize: 12),
+                                                  "Record a total of 55 km (34.2 mi) of Nordic skiing in ",
+                                                  style: TextStyle(fontSize: 11),
                                                 ),
                                               ),
                                               Text(" a month.",
-                                                  style: TextStyle(fontSize: 12)),
+                                                  style: TextStyle(fontSize: 11)),
                                               Padding(
                                                 padding:
                                                     const EdgeInsets.only(top: 12.0),
@@ -446,7 +448,7 @@ class _ChallengePageState extends State<ChallengePage> {
                                   child: Row(
                                     children: [
                                       Image.asset("assets/images/shoes.png",height: 39,width:39,),
-                                       Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                       Image.asset("assets/images/cuprmv.png",height: 30,width:30,),
                                     ],
                                   ),
                                 ),
@@ -468,45 +470,49 @@ class _ChallengePageState extends State<ChallengePage> {
                     padding: const EdgeInsets.only(right:9.0),
                     child: Row(
                       children: [
-                        Container(height: 300,width:170,
-                          child: Card(
-                            elevation: 1,
-                            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(15,15,0,0),
-                                  child: Image.asset("assets/images/5krmv.png",height:46,width: 46,),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(15,20,0,0),
-                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text("February 5K x",style: TextStyle(fontWeight: FontWeight.w500),),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top:2.0),
-                                        child: Text("Brook Challenge",style: TextStyle(fontWeight: FontWeight.w500)),
-                                      ),
-                                    ],
+                        InkWell(onTap: (){
+                          Navigator.pushNamed(context,'/brook');
+                        },
+                          child: Container(height: 300,width:170,
+                            child: Card(
+                              elevation: 1,
+                              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                    child: Image.asset("assets/images/5krmv.png",height:46,width: 46,),
                                   ),
-                                )
-                                ,
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(8,5,0,0),
-                                  child:
-                                      Image.asset("assets/images/shoes.png",height: 39,width:39,),
-                                       //Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                    child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("February 5K x",style: TextStyle(fontWeight: FontWeight.w500),),
+                                        Padding(
+                                          padding: const EdgeInsets.only(top:2.0),
+                                          child: Text("Brook Challenge",style: TextStyle(fontWeight: FontWeight.w500)),
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                  ,
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(8,5,0,0),
+                                    child:
+                                        Image.asset("assets/images/shoes.png",height: 39,width:39,),
+                                         //Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                      
                                     
-                                  
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left:15.0),
-                                  child: Text("Complete a 5km (3.1 mi)\nrun.\n\nFeb 1 to Mar 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.fromLTRB(10,30,0,0),
-                                  child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
-                                )
-                              ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left:15.0),
+                                    child: Text("Complete a 5km (3.1 mi)\nrun.\n\nFeb 1 to Mar 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                    child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -525,49 +531,53 @@ class _ChallengePageState extends State<ChallengePage> {
                   padding: const EdgeInsets.only(left:9.0),
                   child: Row(
                     children: [
-                      Container(height: 300,width:170,
-                        child: Card(
-                          elevation: 1,
-                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(15,15,0,0),
-                                child: Image.asset("assets/images/speedo.png",height:46,width: 46,),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(15,20,0,0),
-                                child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("SPEEDO:CALL",style: TextStyle(fontWeight: FontWeight.w500),),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top:2.0),
-                                      child: Text("YOURSELF A SWIM...",style: TextStyle(fontWeight: FontWeight.w500)),
-                                    ),
-                                  ],
+                      InkWell(onTap: () {
+                        Navigator.pushNamed(context, '/challengesecond');
+                      },
+                        child: Container(height: 300,width:170,
+                          child: Card(
+                            elevation: 1,
+                            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(15,15,0,0),
+                                  child: Image.asset("assets/images/speedo.png",height:46,width: 46,),
                                 ),
-                              )
-                              ,
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(15,5,0,0),
-                                child: Row(
-                                  children: [
-                                   Padding(
-                                     padding: const EdgeInsets.fromLTRB(0,10,8,10),
-                                     child: Icon(Icons.waves_outlined,size:17,),
-                                   ),
-                                     Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(15,20,0,0),
+                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("SPEEDO:CALL",style: TextStyle(fontWeight: FontWeight.w500),),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top:2.0),
+                                        child: Text("YOURSELF A SWIM...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                                ,
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(15,5,0,0),
+                                  child: Row(
+                                    children: [
+                                     Padding(
+                                       padding: const EdgeInsets.fromLTRB(0,10,8,10),
+                                       child: Icon(Icons.waves_outlined,size:17,),
+                                     ),
+                                       Image.asset("assets/images/cuprmv.png",height: 30,width:30,),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left:15.0),
-                                child: Text("120 minutes in water\n\nJan 29 to Feb 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(10,45,0,0),
-                                child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
-                              )
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(left:15.0),
+                                  child: Text("120 minutes in water\n\nJan 29 to Feb 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(10,45,0,0),
+                                  child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -640,16 +650,16 @@ class _ChallengePageState extends State<ChallengePage> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(15,15,0,0),
-                                child: Image.asset("assets/images/speedo.png",height:46,width: 46,),
+                                child: Image.asset("assets/images/400rmv.png",height:46,width: 46,),
                               ),
                               Padding(
                                 padding: const EdgeInsets.fromLTRB(15,20,0,0),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("PUMA Forever.",style: TextStyle(fontWeight: FontWeight.w500),),
+                                    Text("February",style: TextStyle(fontWeight: FontWeight.w500),),
                                     Padding(
                                       padding: const EdgeInsets.only(top:2.0),
-                                      child: Text("Faster. 25k Challen...",style: TextStyle(fontWeight: FontWeight.w500)),
+                                      child: Text("400-Minute Challe...",style: TextStyle(fontWeight: FontWeight.w500)),
                                     ),
                                   ],
                                 ),
@@ -660,16 +670,16 @@ class _ChallengePageState extends State<ChallengePage> {
                                 child: Row(
                                   children: [
                                     Image.asset("assets/images/shoes.png",height: 39,width:39,),
-                                     Image.asset("assets/images/cuprmv.png",height: 20,width:20,),
+                                    
                                   ],
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left:15.0),
-                                child: Text("Run a total of 25 km in 5\nweeks\n\nFeb 12 to Mar 18,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
+                                child: Text("Complete 400 minutes of \nactivity in a month - any\nsport counts\n\nFeb 1 to Feb 29,2024",style: TextStyle(fontSize:11,fontWeight: FontWeight.w300),),
                               ),
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(10,30,0,0),
+                                padding: const EdgeInsets.fromLTRB(10,18,0,0),
                                 child: ElevatedButton(style: ElevatedButton.styleFrom(fixedSize: Size(140, 20),backgroundColor:Color.fromARGB(255, 228, 33, 16), ), onPressed: (){}, child:Text("Join")),
                               )
                             ],

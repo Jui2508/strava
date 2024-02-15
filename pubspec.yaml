@@ -100,6 +100,7 @@ flutter:
     - .env
     - assets/images/strava_logo.jpg
     - assets/images/location.png
+    - assets/images/juinew2.png
     - assets/images/earth.png
     - assets/images/hide_map.png
     - assets/images/google.png
@@ -127,12 +128,18 @@ flutter:
     - assets/images/hike.png
     - assets/images/workout.png
     - assets/images/ski.jpg
+    - assets/images/runner.jpg
     - assets/images/55knew.png
     - assets/images/skiirmv.png
     - assets/images/ws2.png
     - assets/images/add2.png
     - assets/images/q.png
     - assets/images/fbnewrmv.png
+    - assets/images/cuprmv.png
+    - assets/images/smrt.png
+    - assets/images/400rmv.png
+    - assets/images/yellowcup.png
+    - assets/images/msg.png
     
     
 

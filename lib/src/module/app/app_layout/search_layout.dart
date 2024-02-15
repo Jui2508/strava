@@ -39,13 +39,14 @@ class SearchLayout extends StatelessWidget {
               }, 
              // Text("FRIENDS",style: TextStyle(color: Colors.white),)),
 
-              child:Text("FRIENDS",style: TextStyle(color:ispressed?Colors.white :Colors.black,fontWeight: FontWeight.w600),)),
+              child:Text("FRIENDS",style: TextStyle(color:ispressed?Colors.white :Color.fromARGB(255, 247, 163, 138),fontWeight: FontWeight.w600),)),
               
                Padding(
                 padding: const EdgeInsets.only(left:130),
                 child: InkWell(onTap: () {
-                 // Navigator.pushNamed(context, '/club');
-                }, child: Text("CLUBS",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),)),
+                  ispressed:true;
+                 //Navigator.pushNamed(context, '/club');
+                },child:Text("CLUB",style: TextStyle(color:ispressed?Colors.white :Color.fromARGB(255, 247, 163, 138),fontWeight: FontWeight.w600),)),
               )
             ],
           ),

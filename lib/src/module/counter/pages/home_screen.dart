@@ -193,10 +193,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top:10.0),
-                          child: Column(
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                width:345,height: 260,
+                                width:320,height: 260,
                                child: Image.asset("assets/images/newmap.jpg",fit: BoxFit.cover,),
                               ),
                             ],
@@ -347,7 +347,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                    ) ),
                               ),
                                InkWell(onTap: (){
-                                Navigator.pushNamed(context,'/challengefirst');
+                                Navigator.pushNamed(context,'/brook');
                               },
                                 child: Container(
                                   height: 180,width:320,

@@ -2,6 +2,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:strava_clone/src/boot.dart';
 import 'package:date_format/date_format.dart';
+import 'package:test/expect.dart';
 import '../../login/pages/login_pages.dart';
 import 'package:intl/intl.dart';
 
@@ -11,8 +12,7 @@ TextEditingController lastnamec = TextEditingController();
 FocusNode FocusNodeLastName = new FocusNode();
 FocusNode FocusNodeBirthdate = new FocusNode();
 FocusNode FocusNodeGender = new FocusNode();
-//FocusNode FocusNodeLastName = new FocusNode();
-//String DateFormat="";
+
 String? selectedOption;
 
 class DetailPage extends StatefulWidget {
@@ -159,7 +159,7 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 260),
+                      padding: const EdgeInsets.only(right:230),
                       child: Text(
                         '${selectedOption}',
                         style: TextStyle(fontSize: 15, color: Colors.black),
@@ -177,14 +177,17 @@ class _DetailPageState extends State<DetailPage> {
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey.shade400,
                       fixedSize: Size(340, 45)),
-                  onPressed: () {
+                  onPressed: () {print("$selectedOption");
                     Navigator.pushNamed(context, '/welcome');
                     // createNote();
                   },
                   child: Text(
                     "Continue",
+                    
                     style: TextStyle(fontSize: 17, color: Colors.black),
-                  ))
+                  ),
+                  )
+                 
             ],
           ),
         ),
