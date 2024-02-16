@@ -4,13 +4,15 @@ import 'package:strava_clone/src/module/app/bloc/app_bloc.dart';
 // import 'package:strava_clone/src/module/components/profile_image/profile_image_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
 import 'package:test/expect.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 //import '../../../app/app_layout/group_layout.dart';
 //import '../../../components/menu/bottom_menu.dart';
 
-
+final Uri _url = Uri.parse('https://www.facebook.com/');
 class FacebookPage extends StatefulWidget {
   const FacebookPage({super.key, required this.title, this.color});
   final String title;
@@ -21,6 +23,12 @@ class FacebookPage extends StatefulWidget {
 }
 
 class FacebookPageState extends State<FacebookPage> {
+  Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+
   String flowerImage =
       'https://images.unsplash.com/photo-1515041219749-89347f83291a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FydG9vbnxlbnwwfHwwfHw%3D&w=1000&q=80';
   // String flowerImage = '';
@@ -55,7 +63,9 @@ class FacebookPageState extends State<FacebookPage> {
         ),),
         Padding(
           padding: const EdgeInsets.fromLTRB(0,10,0,0),
-          child: OutlinedButton(style:OutlinedButton.styleFrom(side:BorderSide(color:Color.fromARGB(255, 44, 108, 161)), fixedSize: Size(145,35)), onPressed: (){}, child: Text("Connect Securely",style: TextStyle(fontSize: 13,color: Color.fromARGB(255, 44, 108, 161)),)),
+          child: OutlinedButton(style:OutlinedButton.styleFrom(side:BorderSide(color:Color.fromARGB(255, 44, 108, 161)), fixedSize: Size(145,35)), onPressed: (){
+          _launchUrl();
+          }, child: Text("Connect Securely",style: TextStyle(fontSize: 13,color: Color.fromARGB(255, 44, 108, 161)),)),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(15,270,15,0),

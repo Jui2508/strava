@@ -9,7 +9,8 @@ import 'package:strava_clone/src/module/login/login.dart';
 import '../../../database/note.dart';
 import '../../../database/note_database.dart';
 import 'dart:core';
-
+bool _isObscure = true;
+bool _isObscureForConfirmPassword = true;
 //import 'package:note_database'
 //import 'package:strava_setting/src/database/note_database.dart';
 FocusNode FocusNodeFirstName = new FocusNode();
@@ -223,75 +224,131 @@ class MyFormState extends State<MySignUp> {
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: TextField(
-                                obscureText: true,
-                                controller: passc,
-                                style: const TextStyle(color: Colors.white),
-                                decoration: InputDecoration(
-                                  //
-                                  focusedErrorBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Color.fromARGB(255, 164, 3, 3)),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
+                              child: SizedBox(height: 60,
+                                child: TextFormField(
+                                  obscureText: _isObscure,
+                                   validator:(String? msg){dynamic error;
+                                    if(msg!.isEmpty){
+                                    return "Please Enter Password";
+                                    }
+                                    else if(msg.length<6){
+                                      return "Password is too short";
+                                    
+                                        // else {
+                                        //   Navigator.pushNamed(context,"/home_screen");
+                                        // }
+                                      
+                                      //  print(currentNotes[i]);
+                                    
+                                      return error;
+                                    }
+                                  },
+                                  controller: passc,
+                                  style: const TextStyle(color: Colors.white),
+                                  decoration: InputDecoration(
+                                    //
+                                    focusedErrorBorder: const OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color:
-                                              Color.fromARGB(255, 164, 3, 3))),
-                                  errorStyle: const TextStyle(
-                                      color: Color.fromARGB(255, 164, 3, 3)),
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1)),
-                                  hintText: "  Enter Password",
-                                  hintStyle:
-                                      const TextStyle(color: Colors.white),
-                                  labelText: "  Password",
-                                  labelStyle: TextStyle(
-                                      color: FocusNodePassword.hasFocus
-                                          ? Colors.blue
-                                          : Colors.grey.shade200),
-                                  focusedBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.grey)),
+                                          color: Color.fromARGB(255, 164, 3, 3)),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(1),
+                                        borderSide: BorderSide(
+                                            color:
+                                                Color.fromARGB(255, 164, 3, 3))),
+                                    errorStyle: const TextStyle(
+                                        color: Color.fromARGB(255, 164, 3, 3)),
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(1)),
+                                    hintText: "  Enter Password",
+                                    hintStyle:
+                                        const TextStyle(color: Colors.white),
+                                    labelText: "  Password",
+                                    labelStyle: TextStyle(
+                                        color: FocusNodePassword.hasFocus
+                                            ? Colors.blue
+                                            : Colors.grey.shade200),
+                                    focusedBorder: const OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.grey)),
+                                             suffix: IconButton(
+                                  padding: const EdgeInsets.all(0),
+                                  iconSize: 20.0,
+                                  icon: _isObscure
+                                      ? const Icon(
+                                          Icons.visibility_off,
+                                          color: Colors.white,
+                                        )
+                                      : const Icon(
+                                          Icons.visibility,
+                                          color: Colors.white,
+                                        ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _isObscure = !_isObscure;
+                                    });
+                                  },
+                                ),
+                                  ),
                                 ),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: TextFormField(
-                                obscureText: true,
-                                validator: (String? msg) {
-                                  if (msg != passc.text) {
-                                    return "Password is not same as above";
-                                  }
-                                  return null;
-                                },
-                                style: const TextStyle(color: Colors.white),
-                                decoration: InputDecoration(
-                                  focusedErrorBorder: const OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        color: Color.fromARGB(255, 164, 3, 3)),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1),
+                              child: SizedBox(height:60,
+                                child: TextFormField(
+                                 obscureText: _isObscureForConfirmPassword,
+                                  validator: (String? msg) {
+                                    if (msg != passc.text) {
+                                      return "Password is not same as above";
+                                    }
+                                    return null;
+                                  },
+                                  style: const TextStyle(color: Colors.white),
+                                  decoration: InputDecoration(
+                                    focusedErrorBorder: const OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color:
-                                              Color.fromARGB(255, 164, 3, 3))),
-                                  errorStyle: const TextStyle(
-                                      color: Color.fromARGB(255, 164, 3, 3)),
-                                  border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(1)),
-                                  hintText: "  Confirm Password",
-                                  hintStyle:
-                                      const TextStyle(color: Colors.white),
-                                  labelText: " Confirm Password",
-                                  labelStyle: TextStyle(
-                                      color: FocusNodeFirstName.hasFocus
-                                          ? Colors.blue
-                                          : Colors.grey.shade200),
-                                  focusedBorder: const OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.grey)),
+                                          color: Color.fromARGB(255, 164, 3, 3)),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(1),
+                                        borderSide: BorderSide(
+                                            color:
+                                                Color.fromARGB(255, 164, 3, 3))),
+                                    errorStyle: const TextStyle(
+                                        color: Color.fromARGB(255, 164, 3, 3)),
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(1)),
+                                    hintText: "  Confirm Password",
+                                    hintStyle:
+                                        const TextStyle(color: Colors.white),
+                                    labelText: " Confirm Password",
+                                    labelStyle: TextStyle(
+                                        color: FocusNodeFirstName.hasFocus
+                                            ? Colors.blue
+                                            : Colors.grey.shade200),
+                                    focusedBorder: const OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.grey)),
+                                            suffix: IconButton(
+                                  padding: const EdgeInsets.all(0),
+                                  iconSize: 20.0,
+                                  icon: _isObscureForConfirmPassword
+                                      ? const Icon(
+                                          Icons.visibility_off,
+                                          color: Colors.white,
+                                        )
+                                      : const Icon(
+                                          Icons.visibility,
+                                          color: Colors.white,
+                                        ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _isObscureForConfirmPassword = !_isObscureForConfirmPassword;
+                                    });
+                                  },
+                                ),
+                                  ),
                                 ),
                               ),
                             ),

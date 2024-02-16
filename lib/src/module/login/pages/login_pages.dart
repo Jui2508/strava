@@ -4,6 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
+import 'package:strava_clone/src/module/signup/pages/signup_pages.dart';
 import 'dart:core';
 
 import '../../../database/note.dart';
@@ -13,6 +14,7 @@ import '../../../database/note_database.dart';
 FocusNode FocusNodeFirstName = new FocusNode();
 FocusNode FocusNodePassword = new FocusNode();
 TextEditingController usernamecontroller = TextEditingController();
+bool _isObscureForPassword = true;
 
 //import 'package:stravaapplication/routes.dart';
 //https://media.istockphoto.com/id/1262293243/photo/d.jpg?s=612x612&w=0&k=20&c=HfhtRWYeR49mVmALB1zCzgOhY3YZ9ndnRnIb02CpvB8=
@@ -31,7 +33,7 @@ class MyFormState extends State<LoginPage> {
       {
         await Future.delayed(const Duration(seconds: 1));
         //context.read<NoteDatabase>().addNote(namec.text, passc.text);
-      // Navigator.pushNamed(context,'/home_screen');
+      //Navigator.pushNamed(context,'/home_screen');
         print("clicked");
       }
     }
@@ -201,9 +203,9 @@ class MyFormState extends State<LoginPage> {
                                           print("not same=================");
                                           error = "Please enter valid data";
                                         }
-                                        else {
-                                          Navigator.pushNamed(context,"/home_screen");
-                                        }
+                                        // else {
+                                        //   Navigator.pushNamed(context,"/home_screen");
+                                        // }
                                       });
                                       //  print(currentNotes[i]);
                                       print(namec.text);
@@ -231,29 +233,63 @@ class MyFormState extends State<LoginPage> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: TextFormField(
-                                  validator: (String? msg) {
-                                    if (msg!.isEmpty) {
-                                      return "Please Enter Password";
-                                    } else if (msg.length < 6) {
-                                      return "Password is too short";
+                                child: SizedBox(height: 60,
+                                  child: TextFormField(controller: passc,
+                                    obscureText: _isObscureForPassword,
+                                       validator:(String? msg){dynamic error;
+                                    if(msg!.isEmpty){
+                                    return "Please Enter Password";
                                     }
-                                    return null;
+                                    else if(msg.length<6){
+                                      return "Password is too short";
+                                    }else {
+                                      currentNotes.forEach((element) {
+                                        if (element.password != passc.text) {
+                                          print("not same=================");
+                                          error = "Incorrect Password";
+                                        }
+                                        // else {
+                                        //   Navigator.pushNamed(context,"/home_screen");
+                                        // }
+                                      });
+                                      //  print(currentNotes[i]);
+                                    
+                                      return error;
+                                    }
                                   },
-                                  style: TextStyle(color: Colors.white),
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(1)),
-                                    hintText: "  Enter Password",
-                                    hintStyle: TextStyle(color: Colors.white),
-                                    labelText: "  Password",
-                                    labelStyle: TextStyle(
-                                        color: FocusNodePassword.hasFocus
-                                            ? Colors.blue
-                                            : Colors.grey.shade200),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: Colors.grey)),
+                                    style: TextStyle(color: Colors.white),
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(1)),
+                                      hintText: "  Enter Password",
+                                      hintStyle: TextStyle(color: Colors.white),
+                                      labelText: "  Password",
+                                      labelStyle: TextStyle(
+                                          color: FocusNodePassword.hasFocus
+                                              ? Colors.blue
+                                              : Colors.grey.shade200),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.grey)),
+                                               suffix: IconButton(
+                                    padding: const EdgeInsets.all(0),
+                                    iconSize: 20.0,
+                                    icon: _isObscureForPassword
+                                        ? const Icon(
+                                            Icons.visibility_off,
+                                            color: Colors.white,
+                                          )
+                                        : const Icon(
+                                            Icons.visibility,
+                                            color: Colors.white,
+                                          ),
+                                    onPressed: () {
+                                      setState(() {
+                                        _isObscureForPassword = !_isObscureForPassword;
+                                      });
+                                    },
+                                  ),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -271,6 +307,15 @@ class MyFormState extends State<LoginPage> {
                                         print(
                                             "list==========================${currentNotes}");
                                         moveToNext(context);
+                                      //  dynamic error;
+                                        currentNotes.forEach((element) {
+                                        if (element.text == namec.text && element.password == passc.text) {
+                                    
+                                    
+                                          Navigator.pushNamed(context,"/home_screen");
+                                        }
+                                      });
+                                        //Navigator.pushNamed(context,'/home_screen');
                                       },
                                       child: Text("Log In")),
                                 ),

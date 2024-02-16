@@ -27,22 +27,28 @@ class _PortfolioPageState extends State<PortfolioPage> {
   //TO DO: Pass it from local referncd area Or Main Action component of the App
   List<Widget> getAction(BuildContext context) {
     return [
-     
       Padding(
           padding: const EdgeInsets.only(right: 20.0),
           child: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context,'/you');
-            },
-            child: const CircleAvatar(child: Icon(Icons.person,size:18,color: Colors.white,), radius:12,backgroundColor:Colors.grey,)
-          )),
-          Padding(
+              onTap: () {
+                Navigator.pushNamed(context, '/you');
+              },
+              child: const CircleAvatar(
+                child: Icon(
+                  Icons.person,
+                  size: 18,
+                  color: Colors.white,
+                ),
+                radius: 12,
+                backgroundColor: Colors.grey,
+              ))),
+      Padding(
           padding: const EdgeInsets.only(right: 20.0),
           child: GestureDetector(
             onTap: () {},
             child: const Icon(Icons.search_outlined),
           )),
-          Padding(
+      Padding(
           padding: const EdgeInsets.only(right: 20.0),
           child: GestureDetector(
             onTap: () {},
@@ -53,29 +59,30 @@ class _PortfolioPageState extends State<PortfolioPage> {
 
   @override
   Widget build(BuildContext context) {
- floatingActionButton: FloatingActionButton(backgroundColor: Color.fromARGB(255, 247, 23, 2), onPressed: (){},child: Icon(Icons.add));
+    floatingActionButton:
+    FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 247, 23, 2),
+        onPressed: () {},
+        child: Icon(Icons.add));
     final textTheme = Theme.of(context).textTheme;
     return YourLayout(
         drawer: const AppMenu(),
         bootomNavigationBar: const BottomMenu(),
         actions: getAction(context),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-             
-         
-         SizedBox(
-            height:320,width:500,
-             child: Card(
-              child: Image.asset("assets/images/graph.jpg",fit: BoxFit.cover,),
-             ),
-           ),
-         
-           
-         
-       ] ) // This trailing comma makes auto-formatting nicer for build methods.
-        
-    ));
+            child: Column(children: [
+          SizedBox(
+            height: 320,
+            width: 500,
+            child: Card(
+              child: Image.asset(
+                "assets/images/graph.jpg",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ]) // This trailing comma makes auto-formatting nicer for build methods.
 
+            ));
   }
 }

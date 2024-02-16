@@ -42,7 +42,7 @@ class _MessagePageNewState extends State<MessagePageNew> {
             ),
             Container(
               child:Padding(
-                padding: const EdgeInsets.fromLTRB(60,25,0,0),
+                padding: const EdgeInsets.fromLTRB(45,25,0,0),
                 child: Column(
                   children: [
                     Text(

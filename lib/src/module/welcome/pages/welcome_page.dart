@@ -41,7 +41,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         " Welcome,${namec.value.text}!",
                         style: TextStyle(
                             decoration: TextDecoration.none,
-                            color: Color.fromARGB(255, 183, 170, 170),
+                            color: Color.fromARGB(255, 238, 201, 201),
                             fontSize: 25,
                             fontWeight: FontWeight.bold),
                       ),
@@ -52,7 +52,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           style: TextStyle(
                               decoration: TextDecoration.none,
                               fontSize: 14,
-                              color: Color.fromARGB(255, 201, 171, 171)),
+                              color:Color.fromARGB(255, 238, 201, 201),),
                         ),
                       ),
                       Padding(

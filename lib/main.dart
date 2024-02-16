@@ -35,8 +35,7 @@ await NoteDatabase.initialize();
   //     ),
   //   );
   //}
-  
-  runApp(
+ runApp(
     ChangeNotifierProvider(create:(context) => NoteDatabase(),child: 
     MyApp(
     appRouter: AppRouter(),

@@ -1,8 +1,11 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:strava_clone/src/boot.dart';
+import 'package:strava_clone/src/database/note_database.dart';
 import 'package:strava_clone/src/module/details/pages/detail_page.dart';
 import 'package:intl/intl.dart';
+
+import '../../../database/note.dart';
 
 FocusNode FocusNodeFirstName = new FocusNode();
 FocusNode FocusNodeLastName = new FocusNode();
@@ -19,6 +22,13 @@ class editinfo_page extends StatefulWidget {
 class _editinfo_pageState extends State<editinfo_page> {
   @override
   Widget build(BuildContext context) {
+    
+    final noteDatabase = context.read<NoteDatabase>();
+    List <Note> currentNotes = noteDatabase.currentNotes;
+    currentNotes.forEach((element){
+    namec.text=element.text;
+  //  lastnamec.text=element.password;
+    });
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Color.fromARGB(255, 247, 23, 2),
@@ -29,6 +39,9 @@ class _editinfo_pageState extends State<editinfo_page> {
                   padding: const EdgeInsets.only(left: 110.0),
                   child: TextButton(
                       onPressed: () {
+                      
+                      //  final note=currentNotes
+                      //   updateNote();
                         Navigator.pushNamed(context,'/you');
                       },
                       child: Text(
@@ -66,6 +79,7 @@ class _editinfo_pageState extends State<editinfo_page> {
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 6, 10, 0),
                         child: TextField(
+                          
                             controller: namec,
                             cursorColor: Colors.black,
                             cursorHeight: 20,
@@ -600,5 +614,12 @@ class _editinfo_pageState extends State<editinfo_page> {
             ],
           ),
         ));
+  }
+  void updateNote(Note notes){
+    namec.text=notes.text;
+    context.read<NoteDatabase>().updateNote(notes.id,namec.text);
+        namec.clear();
+        
+    
   }
 }
