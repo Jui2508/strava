@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:strava_clone/src/boot.dart';
@@ -20,6 +21,14 @@ class editinfo_page extends StatefulWidget {
 }
 
 class _editinfo_pageState extends State<editinfo_page> {
+   @override
+  void initState(){
+    super.initState();
+    readNotes();
+  }
+   void readNotes(){
+  context.read<NoteDatabase>().fetchNote();
+} 
   @override
   Widget build(BuildContext context) {
     
@@ -39,9 +48,13 @@ class _editinfo_pageState extends State<editinfo_page> {
                   padding: const EdgeInsets.only(left: 110.0),
                   child: TextButton(
                       onPressed: () {
-                      
+                         currentNotes.forEach((element){
+    namec.text=element.text;
+  //  lastnamec.text=element.password;
+    });
+                    // context.read<NoteDatabase>().updateNote(element.id,namec.text);
                       //  final note=currentNotes
-                      //   updateNote();
+                      
                         Navigator.pushNamed(context,'/you');
                       },
                       child: Text(
@@ -619,7 +632,6 @@ class _editinfo_pageState extends State<editinfo_page> {
     namec.text=notes.text;
     context.read<NoteDatabase>().updateNote(notes.id,namec.text);
         namec.clear();
-        
     
   }
 }
